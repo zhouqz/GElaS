@@ -22,7 +22,7 @@ rm(list=ls())
 #*******************************************************************************#
 #Initialize variable
 #Tissue name
-TissTitle=c("eWAT","sWAT","Liver","Muscle")
+TissTitle=c("vWAT","sWAT","Liver","Muscle")
 
 #Comparison list
 comg=c("FastvsAdLibitum","RefeedvsFast")
