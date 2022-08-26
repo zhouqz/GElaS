@@ -101,7 +101,7 @@ for(tissi in TissTitle){
     tScoreMat[,paste0(tagei,"_GElaS")]=data.frame(tGElaS,stringsAsFactors = F)
     
     #Output the GElaS
-    fwrite(tScoreMat,file = paste0(tissi,".",tagei,".GElaS.txt"),sep = "\t")
+    fwrite(tScoreMat,file = paste0(tissi,"/",tagei,".GElaS.txt"),sep = "\t")
   }
 }
 
