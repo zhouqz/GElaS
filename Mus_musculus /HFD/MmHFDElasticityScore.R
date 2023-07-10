@@ -72,12 +72,12 @@ for(tissi in TissTitle){
     tlog2FC.Ratio[is.na(tlog2FC.Ratio)]=0
     
     #Calculate the weight for FDR (statistical significance)
-    tFDR.FN=-log10(get(tFN.name)[tgid,"adj.P.Val"])
-    tFDR.RF=-log10(get(tRF.name)[tgid,"adj.P.Val"])
-    tFDR.FN[tFDR.FN <= -log10(0.05)]=tFDR.FN[tFDR.FN <= -log10(0.05)]/(-log10(0.05))
-    tFDR.FN[tFDR.FN > -log10(0.05)]=1
-    tFDR.RF[tFDR.RF <= -log10(0.05)]=tFDR.RF[tFDR.RF <= -log10(0.05)]/(-log10(0.05))
-    tFDR.RF[tFDR.RF > -log10(0.05)]=1
+    tFDR.FN=log10(get(tFN.name)[tgid,"adj.P.Val"])
+    tFDR.RF=log10(get(tRF.name)[tgid,"adj.P.Val"])
+    tFDR.FN[tFDR.FN >= log10(0.05)]=tFDR.FN[tFDR.FN >= log10(0.05)]/(log10(0.05))
+    tFDR.FN[tFDR.FN < log10(0.05)]=1
+    tFDR.RF[tFDR.RF >= log10(0.05)]=tFDR.RF[tFDR.RF >= log10(0.05)]/(log10(0.05))
+    tFDR.RF[tFDR.RF < log10(0.05)]=1
     
     #Integrate the expression dynamics, statistical significance, and restoration extent to 
     #calculate the GElaS
